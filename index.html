@@ -1,0 +1,664 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ArcSignal Inc — Where Traffic Converts</title>
+  <meta name="description" content="ArcSignal Inc is a performance media buying company established in 2021, specializing in lead generation across U.S. insurance, finance products, and sweeps." />
+  <meta property="og:title" content="ArcSignal Inc — Where Traffic Converts" />
+  <meta property="og:description" content="Performance media buying since 2021. Focused on U.S. insurance, finance products, and sweeps." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#05070b" />
+  <style>
+    :root {
+      --bg: #05070b;
+      --bg-2: #080d14;
+      --panel: rgba(255, 255, 255, 0.055);
+      --panel-strong: rgba(255, 255, 255, 0.085);
+      --border: rgba(255, 255, 255, 0.12);
+      --border-soft: rgba(255, 255, 255, 0.075);
+      --text: #f5f7fb;
+      --muted: #9aa4b2;
+      --muted-2: #6f7a89;
+      --blue: #ffffff;
+      --blue-2: #d7dbe2;
+      --silver: #e7ecf3;
+      --dark-logo: #070d19;
+      --shadow: 0 28px 90px rgba(0, 0, 0, 0.45);
+      --radius: 24px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 15% 0%, rgba(255, 255, 255, 0.12), transparent 28%),
+        radial-gradient(circle at 85% 4%, rgba(255, 255, 255, 0.08), transparent 32%),
+        linear-gradient(180deg, #05070b 0%, #070b11 48%, #030507 100%);
+      min-height: 100vh;
+      line-height: 1.58;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.26;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 54px 54px;
+      mask-image: linear-gradient(to bottom, black, transparent 78%);
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: rgba(5, 7, 11, 0.74);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .nav-inner {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-logo,
+    .profile-logo {
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      background: linear-gradient(145deg, #080e1c, #02050b);
+      border: 1px solid rgba(255,255,255,0.14);
+    }
+
+    .brand-logo { width: 40px; height: 40px; border-radius: 12px; }
+    .brand-logo img,
+    .profile-logo img { width: 100%; height: 100%; object-fit: cover; }
+
+    .logo-fallback {
+      width: 72%;
+      height: 54%;
+      border: 7px solid var(--silver);
+      border-left: 0;
+      border-bottom: 0;
+      border-radius: 0 38px 0 0;
+      transform: skewX(0deg);
+      opacity: 0.98;
+      position: relative;
+    }
+
+    .logo-fallback::before,
+    .logo-fallback::after {
+      content: "";
+      position: absolute;
+      left: -3px;
+      border-top: 7px solid var(--silver);
+      border-right: 7px solid var(--silver);
+      border-radius: 0 34px 0 0;
+    }
+
+    .logo-fallback::before { width: 76%; height: 66%; top: 30%; }
+    .logo-fallback::after { width: 52%; height: 42%; top: 58%; }
+
+    .nav-links { display: flex; align-items: center; gap: 26px; color: var(--muted); font-size: 14px; }
+    .nav-links a:hover { color: var(--text); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.055);
+      color: var(--text);
+      font-weight: 760;
+      transition: 0.22s ease;
+      white-space: nowrap;
+    }
+
+    .btn:hover { transform: translateY(-2px); background: rgba(255,255,255,0.09); border-color: rgba(255,255,255,0.24); }
+    .btn.primary { background: linear-gradient(135deg, #ffffff, #bfc5ce); color: #030507; border-color: transparent; box-shadow: 0 18px 58px rgba(255, 255, 255, 0.16); }
+
+    .hero { padding: 44px 0 74px; }
+
+    .profile-shell {
+      position: relative;
+      border: 1px solid var(--border-soft);
+      border-radius: 30px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.035);
+      box-shadow: var(--shadow);
+    }
+
+    .cover {
+      position: relative;
+      min-height: 286px;
+      padding: 58px 46px 90px;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,0.94) 0%, rgba(3,7,12,0.90) 42%, rgba(2,4,8,0.76) 100%),
+        radial-gradient(circle at 86% 26%, rgba(255,255,255,0.42), transparent 8%),
+        linear-gradient(135deg, #000, #090d14);
+    }
+
+    .cover::before {
+      content: "";
+      position: absolute;
+      top: -22%;
+      right: -12%;
+      width: 58%;
+      height: 150%;
+      background:
+        radial-gradient(circle, rgba(255,255,255,0.78) 0 1px, transparent 2px),
+        repeating-linear-gradient(13deg, rgba(255,255,255,0.16) 0 1px, transparent 1px 18px);
+      background-size: 24px 24px, auto;
+      clip-path: polygon(0 45%, 100% 16%, 100% 82%, 0 56%);
+      opacity: 0.56;
+      filter: blur(0.2px);
+    }
+
+    .cover::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 8%;
+      width: 46%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.82), transparent);
+      box-shadow: 0 0 36px rgba(255,255,255,0.55), 0 0 120px rgba(255, 255, 255,0.35);
+      transform: translateY(-50%);
+    }
+
+    .cover-content { position: relative; z-index: 2; max-width: 620px; }
+    .cover-kicker { color: var(--muted); font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px; }
+
+    .cover h1 {
+      margin: 0;
+      font-size: clamp(58px, 8.8vw, 112px);
+      line-height: 0.82;
+      letter-spacing: -0.075em;
+      text-transform: uppercase;
+    }
+
+    .cover-sub { margin-top: 26px; color: var(--muted); font-size: 17px; }
+
+    .cover-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 20px;
+      color: #c8d0db;
+      font-size: 14px;
+    }
+
+    .meta-item { display: inline-flex; align-items: center; gap: 8px; }
+    .meta-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--blue-2); box-shadow: 0 0 18px rgba(215, 219, 226,0.72); }
+
+    .profile-card {
+      position: relative;
+      z-index: 5;
+      margin: -58px 32px 0;
+      padding: 0 0 34px;
+    }
+
+    .profile-logo {
+      width: 164px;
+      height: 164px;
+      border-radius: 10px;
+      border: 8px solid #05070b;
+      box-shadow: 0 22px 62px rgba(0,0,0,0.52);
+      margin-bottom: 24px;
+    }
+
+    .profile-info {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 32px;
+      align-items: end;
+    }
+
+    .profile-info h2 {
+      margin: 0 0 4px;
+      font-size: clamp(34px, 4vw, 56px);
+      line-height: 1;
+      letter-spacing: -0.055em;
+    }
+
+    .tagline { margin: 0 0 16px; font-size: 23px; color: #dfe6f2; letter-spacing: -0.025em; }
+    .linkedin-line { color: var(--muted); font-size: 16px; display: flex; flex-wrap: wrap; gap: 10px; }
+    .linkedin-line span + span::before { content: "•"; color: var(--blue); margin-right: 10px; }
+
+    .profile-actions { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 12px; }
+
+    .section { padding: 78px 0; border-top: 1px solid var(--border-soft); position: relative; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-bottom: 28px; }
+    .section h2 { margin: 0; font-size: clamp(34px, 4.8vw, 58px); line-height: 1.03; letter-spacing: -0.06em; }
+    .section-desc { margin: 0; max-width: 575px; color: var(--muted); font-size: 17px; }
+
+    .overview {
+      display: grid;
+      grid-template-columns: 1fr 0.78fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .overview-copy,
+    .stats-panel,
+    .card,
+    .vertical-card,
+    .principle-card,
+    .contact-card {
+      border: 1px solid var(--border-soft);
+      background: linear-gradient(180deg, rgba(255,255,255,0.065), rgba(255,255,255,0.032));
+      border-radius: var(--radius);
+      box-shadow: 0 18px 66px rgba(0,0,0,0.22);
+    }
+
+    .overview-copy { padding: 32px; }
+    .overview-copy p { color: #c6cfda; font-size: 20px; line-height: 1.58; margin: 0 0 22px; letter-spacing: -0.015em; }
+    .overview-copy p:last-child { margin-bottom: 0; }
+
+    .stats-panel { padding: 24px; display: grid; gap: 14px; }
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      padding: 18px;
+      border: 1px solid var(--border-soft);
+      border-radius: 18px;
+      background: rgba(0,0,0,0.18);
+    }
+    .stat-label { color: var(--muted); font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; }
+    .stat-value { font-size: 22px; font-weight: 820; letter-spacing: -0.035em; text-align: right; }
+
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+
+    .vertical-card { min-height: 300px; padding: 26px; position: relative; overflow: hidden; }
+    .vertical-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 80% 16%, rgba(255, 255, 255,0.18), transparent 30%);
+      pointer-events: none;
+    }
+    .vertical-card > * { position: relative; z-index: 2; }
+    .vertical-index { color: var(--blue-2); font-size: 13px; font-weight: 820; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 34px; }
+    .vertical-card h3 { margin: 0 0 12px; font-size: 26px; line-height: 1.08; letter-spacing: -0.04em; }
+    .vertical-card p { margin: 0 0 20px; color: var(--muted); }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+    .chip { border: 1px solid var(--border); border-radius: 999px; padding: 7px 10px; color: #cdd6e2; background: rgba(255,255,255,0.05); font-size: 12px; }
+
+    .card { padding: 24px; min-height: 220px; }
+    .card-icon { width: 42px; height: 42px; border-radius: 14px; display: grid; place-items: center; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); color: #f5f7fb; margin-bottom: 28px; font-weight: 900; }
+    .card h3 { margin: 0 0 10px; font-size: 20px; letter-spacing: -0.03em; }
+    .card p { margin: 0; color: var(--muted); font-size: 15px; }
+
+    .process-wrap {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .signal-quote {
+      border: 1px solid rgba(215, 219, 226,0.22);
+      border-radius: var(--radius);
+      padding: 32px;
+      background:
+        radial-gradient(circle at 20% 0%, rgba(255, 255, 255,0.20), transparent 34%),
+        rgba(255,255,255,0.04);
+    }
+    .signal-quote p { font-size: 28px; line-height: 1.24; letter-spacing: -0.045em; margin: 0 0 18px; }
+    .muted { color: var(--muted); }
+
+    .steps { display: grid; gap: 12px; }
+    .step {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 16px;
+      padding: 20px;
+      border: 1px solid var(--border-soft);
+      border-radius: 20px;
+      background: rgba(255,255,255,0.045);
+    }
+    .step-no { color: var(--blue-2); font-weight: 880; letter-spacing: 0.08em; }
+    .step h3 { margin: 0 0 4px; font-size: 18px; }
+    .step p { margin: 0; color: var(--muted); }
+
+    .principle-card { padding: 24px; }
+    .principle-card h3 { margin: 0 0 12px; font-size: 21px; letter-spacing: -0.03em; }
+    .principle-card p { margin: 0; color: var(--muted); }
+
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .contact-card { padding: 32px; }
+    .contact-card h2 { margin-bottom: 14px; }
+    .contact-list { margin-top: 24px; display: grid; gap: 12px; color: #cbd4df; }
+    .contact-list span { color: var(--muted); margin-right: 8px; }
+
+    .lead-form { display: grid; gap: 14px; margin-top: 22px; }
+    .field { display: grid; gap: 7px; }
+    .field label { color: #cbd4df; font-size: 13px; font-weight: 720; letter-spacing: 0.02em; }
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      border: 1px solid var(--border-soft);
+      border-radius: 14px;
+      background: rgba(0,0,0,0.22);
+      color: var(--text);
+      padding: 13px 14px;
+      font: inherit;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+    .field textarea { min-height: 132px; resize: vertical; }
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: rgba(215, 219, 226,0.52);
+      box-shadow: 0 0 0 4px rgba(255, 255, 255,0.13);
+      background: rgba(0,0,0,0.30);
+    }
+    .field input::placeholder,
+    .field textarea::placeholder { color: #697585; }
+    .form-note { color: var(--muted-2); font-size: 13px; margin-top: 8px; }
+
+    .footer { padding: 30px 0 44px; color: var(--muted-2); border-top: 1px solid var(--border-soft); font-size: 14px; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
+
+    @media (max-width: 920px) {
+      .nav-links { display: none; }
+      .cover { min-height: 250px; padding: 44px 28px 84px; }
+      .profile-card { margin-left: 20px; margin-right: 20px; }
+      .profile-info,
+      .overview,
+      .process-wrap,
+      .contact-grid { grid-template-columns: 1fr; }
+      .profile-actions { justify-content: flex-start; }
+      .grid-3, .grid-4 { grid-template-columns: 1fr; }
+      .section-head { display: block; }
+      .section-desc { margin-top: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="ArcSignal home">
+        <span class="brand-logo">
+          <img src="assets/arcsignal-logo.png" alt="ArcSignal logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+          <span class="logo-fallback" style="display:none"></span>
+        </span>
+        <span>ArcSignal Inc</span>
+      </a>
+      <div class="nav-links">
+        <a href="#overview">Overview</a>
+        <a href="#verticals">Verticals</a>
+        <a href="#capabilities">Capabilities</a>
+        <a href="#process">Process</a>
+        <a href="#contact" class="btn">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <div class="profile-shell">
+          <div class="cover">
+            <div class="cover-content">
+              <div class="cover-kicker">Performance Media Buying · Lead Generation</div>
+              <h1>Traffic<br />Converts.</h1>
+              <div class="cover-sub">Specialized in Lead Generation</div>
+              <div class="cover-meta">
+                <span class="meta-item"><span class="meta-dot"></span>Coronado · Denver</span>
+                <span class="meta-item"><span class="meta-dot"></span>Since 2021</span>
+                <span class="meta-item"><span class="meta-dot"></span>U.S. Focused Verticals</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="profile-card">
+            <div class="profile-logo">
+              <img src="assets/arcsignal-logo.png" alt="ArcSignal logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+              <span class="logo-fallback" style="display:none"></span>
+            </div>
+            <div class="profile-info">
+              <div>
+                <h2>ArcSignal Inc</h2>
+                <p class="tagline">Where Traffic Converts.</p>
+                <div class="linkedin-line">
+                  <span>Media Buying Company</span>
+                  <span>Denver, Colorado</span>
+                  
+                </div>
+              </div>
+              <div class="profile-actions">
+                <a class="btn primary" href="mailto:sebrina@arcsignal.ltd?subject=ArcSignal%20Partnership%20Inquiry">Start a Test</a>
+                <a class="btn" href="#verticals">View Verticals</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="overview">
+      <div class="container">
+        <div class="section-head">
+          <h2>Overview</h2>
+          <p class="section-desc">A sharper standalone company profile for partner review and BD outreach.</p>
+        </div>
+        <div class="overview">
+          <div class="overview-copy">
+            <p>ArcSignal runs media buying for lead generation campaigns in insurance, finance, sweeps, and selected consumer offers.</p>
+            <p>We focus on traffic execution, campaign testing, and day-to-day optimization across paid digital channels.</p>
+            <p>Since 2021, our work has centered on practical delivery: clean tracking, responsive communication, and performance that advertisers can evaluate clearly.</p>
+          </div>
+          <div class="stats-panel">
+            <div class="stat-row"><div><div class="stat-label">Founded</div></div><div class="stat-value">2021</div></div>
+            <div class="stat-row"><div><div class="stat-label">Core Market</div></div><div class="stat-value">United States</div></div>
+            <div class="stat-row"><div><div class="stat-label">Main Model</div></div><div class="stat-value">Lead Gen</div></div>
+            <div class="stat-row"><div><div class="stat-label">Operating Style</div></div><div class="stat-value">Test → Optimize → Scale</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="verticals">
+      <div class="container">
+        <div class="section-head">
+          <h2>Core Verticals</h2>
+          <p class="section-desc">Our business is built around categories where intent, compliance, tracking, and quality feedback matter from the first test.</p>
+        </div>
+        <div class="grid-3">
+          <article class="vertical-card">
+            <div class="vertical-index">Vertical 01</div>
+            <h3>U.S. Insurance</h3>
+            <p>Media buying for insurance lead generation flows with a focus on user intent, qualified traffic, and controlled delivery.</p>
+            <div class="chips">
+              <span class="chip">Auto</span>
+              <span class="chip">Home</span>
+              <span class="chip">Health</span>
+              <span class="chip">Life</span>
+            </div>
+          </article>
+          <article class="vertical-card">
+            <div class="vertical-index">Vertical 02</div>
+            <h3>Finance Products</h3>
+            <p>Performance traffic for selected consumer finance and lending-related products where data visibility and funnel quality are critical.</p>
+            <div class="chips">
+              <span class="chip">Loans</span>
+              <span class="chip">Cash Advance</span>
+              <span class="chip">Credit</span>
+              <span class="chip">Consumer Finance</span>
+            </div>
+          </article>
+          <article class="vertical-card">
+            <div class="vertical-index">Vertical 03</div>
+            <h3>Sweeps</h3>
+            <p>Selective traffic execution for sweeps and rewards campaigns, with attention to channel fit, compliance rules, and conversion efficiency.</p>
+            <div class="chips">
+              <span class="chip">SOI</span>
+              <span class="chip">Rewards</span>
+              <span class="chip">Email Submit</span>
+              <span class="chip">Sweepstakes</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="capabilities">
+      <div class="container">
+        <div class="section-head">
+          <h2>What We Do</h2>
+          <p class="section-desc">ArcSignal is not positioned as a broad agency. We are a focused media buying and traffic execution team.</p>
+        </div>
+        <div class="grid-4">
+          <article class="card">
+            <div class="card-icon">01</div>
+            <h3>Media Buying</h3>
+            <p>Campaign launch, traffic allocation, creative testing, and daily optimization across paid digital channels.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">02</div>
+            <h3>Lead Generation</h3>
+            <p>Execution for performance campaigns where conversion volume and downstream lead quality must be reviewed together.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">03</div>
+            <h3>Funnel Optimization</h3>
+            <p>Improving the path from ad impression to click, pre-qualification, landing page flow, and conversion event.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">04</div>
+            <h3>Tracking Support</h3>
+            <p>Clear handling of click ID, source ID, payout mapping, UTMs, and server-to-server postback feedback.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="container process-wrap">
+        <div class="signal-quote">
+          <p>We value signal over noise.</p>
+          <div class="muted">Cleaner setup, clearer feedback, and smarter scale.</div>
+        </div>
+        <div class="steps">
+          <div class="step"><div class="step-no">01</div><div><h3>Align</h3><p>Confirm offer rules, allowed channels, caps, KPI expectations, and tracking parameters before launch.</p></div></div>
+          <div class="step"><div class="step-no">02</div><div><h3>Test</h3><p>Start with controlled traffic to validate conversion behavior, EPC, CVR, and advertiser-side quality feedback.</p></div></div>
+          <div class="step"><div class="step-no">03</div><div><h3>Optimize</h3><p>Adjust creative, audience, placement, source mix, timing, and funnel path based on real performance signal.</p></div></div>
+          <div class="step"><div class="step-no">04</div><div><h3>Scale</h3><p>Increase volume gradually when quality holds and partner feedback supports broader delivery.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="standards">
+      <div class="container">
+        <div class="section-head">
+          <h2>Performance Standards</h2>
+          <p class="section-desc">The goal is not blind volume. The goal is traffic that can be measured, reviewed, and improved.</p>
+        </div>
+        <div class="grid-3">
+          <article class="principle-card"><h3>Compliance-Aware Execution</h3><p>Campaigns are reviewed around partner rules, channel requirements, and offer-specific restrictions.</p></article>
+          <article class="principle-card"><h3>Transparent Communication</h3><p>We keep partners updated on launch status, testing pace, performance shifts, and scaling readiness.</p></article>
+          <article class="principle-card"><h3>Data-Led Decisions</h3><p>Optimization is based on measurable feedback, including conversion rate, EPC, source performance, and quality signals.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-card">
+          <h2>Let’s discuss a controlled test.</h2>
+          <p class="section-desc">If you are looking for traffic in U.S. insurance, finance products, or sweeps, share your offer rules, caps, target geo, and tracking requirements.</p>
+          <div class="contact-list">
+            <div><span>Email</span><a href="mailto:sebrina@arcsignal.ltd">sebrina@arcsignal.ltd</a></div>
+            <div><span>Phone</span><a href="tel:+17205553471">+1 (720) 555-3471</a></div>
+            <div><span>Address</span>1500 N Grant St Ste R, Denver, CO 80203, US</div>
+          </div>
+          <div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;">
+            <a class="btn primary" href="mailto:sebrina@arcsignal.ltd?subject=ArcSignal%20Partnership%20Inquiry">Email ArcSignal</a>
+            <a class="btn" href="#top">Back to Top</a>
+          </div>
+        </div>
+        <div class="contact-card">
+          <h2>Submit an inquiry</h2>
+          <p class="section-desc">Use this form to send campaign details directly to our business development team.</p>
+          <form class="lead-form" action="https://formspree.io/f/mzdwkqag" method="POST">
+            <input type="hidden" name="_subject" value="New ArcSignal Website Inquiry" />
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" type="text" name="name" placeholder="Your name" required />
+            </div>
+            <div class="field">
+              <label for="company">Company</label>
+              <input id="company" type="text" name="company" placeholder="Company / Network / Advertiser" />
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" type="email" name="email" placeholder="name@company.com" required />
+            </div>
+            <div class="field">
+              <label for="vertical">Campaign Vertical</label>
+              <select id="vertical" name="vertical" required>
+                <option value="">Select a vertical</option>
+                <option value="US Insurance">U.S. Insurance</option>
+                <option value="Finance Products">Finance Products</option>
+                <option value="Sweeps / Rewards">Sweeps / Rewards</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Tell us about the offer, target geo, cap, payout model, allowed channels, and tracking requirements." required></textarea>
+            </div>
+            <button class="btn primary" type="submit">Submit Inquiry</button>
+            <div class="form-note">Before launch, replace YOUR_FORM_ID with your Formspree form endpoint.</div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> ArcSignal Inc. All rights reserved.</span>
+      <span>Where Traffic Converts.</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
